@@ -1,0 +1,79 @@
+.Nav {
+  display: flex;
+
+  align-items: stretch;
+
+  height: 4rem;
+
+  background-color: #111111;
+}
+
+.Nav__Wrapper {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: stretch;
+  flex: 1;
+
+  padding: 0 1rem;
+}
+
+.Nav__Logo {
+  display: flex;
+
+  align-items: stretch;
+}
+
+.Nav__Logo a {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+
+  padding: 1rem;
+
+  color: #ffffff;
+}
+
+.Nav__Menu {
+  display: flex;
+
+  align-items: stretch;
+}
+
+.Nav__Menu a {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  padding: 0 1rem;
+
+  color: #ffffff;
+
+  @include transition();
+  &:hover {
+    background-color: rgba($color: #ffffff, $alpha: 0.7);
+  }
+}
+
+.Footer {
+  display: flex;
+
+  align-items: stretch;
+
+  height: 4rem;
+
+  color: #ffffff;
+  background-color: #111111;
+}
+
+.Footer__Wrapper {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 1rem;
+}

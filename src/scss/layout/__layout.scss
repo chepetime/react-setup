@@ -1,0 +1,23 @@
+/**
+ * Layout
+ * Styles to give layout
+ */
+
+.App {
+  display: flex;
+
+  flex-direction: column;
+
+  min-height: 100vh;
+
+  background-color: red;
+}
+
+// each view page
+@import 'page';
+
+// canvas
+@import 'canvas';
+
+// wrapper
+@import 'wrapper';

@@ -1,28 +1,28 @@
 import React, { useState } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-import AppNavigation from "./components/Navigation.js";
-import AppFooter from "./components/Footer.js";
+import AppNavigation from "./components/Navigation/Navigation.js";
+import AppFooter from "./components/Footer/Footer.js";
 
 function App() {
   return (
     <BrowserRouter>
-      <Switch>
-        <div class="App">
-          <AppNavigation />
+      <div className="App">
+        <AppNavigation />
 
-          <div className="Canvas">
+        <div className="Canvas">
+          <Switch>
             <Route exact path="/">
               <Clock />
             </Route>
             <Route exact path="/about">
               About: <Clock />
             </Route>
-          </div>
-
-          <AppFooter />
+          </Switch>
         </div>
-      </Switch>
+
+        <AppFooter />
+      </div>
     </BrowserRouter>
   );
 }

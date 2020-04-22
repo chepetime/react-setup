@@ -1,0 +1,19 @@
+.Footer {
+  display: flex;
+
+  align-items: stretch;
+
+  height: 4rem;
+
+  color: #ffffff;
+  background-color: #111111;
+}
+
+.Footer__Wrapper {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 1rem;
+}

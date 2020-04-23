@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 function AppNavigation() {
   return (
@@ -10,8 +10,12 @@ function AppNavigation() {
             <Link to="/">Logo</Link>
           </div>
           <nav className="Nav__Menu">
-            <Link to="/">Home</Link>
-            <Link to="/about">About</Link>
+            <NavLink to="/" activeClassName="selected">
+              Home
+            </NavLink>
+            <NavLink to="/about" activeClassName="selected">
+              About
+            </NavLink>
           </nav>
         </div>
       </div>

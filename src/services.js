@@ -31,11 +31,19 @@ const POST = (route = "/", data = {}) =>
  * postInfo
  * example of a get request
  */
-export const getInfo = () => GET("/info");
+export function getInfo() {
+  return GET("/info");
+}
+
+export function getUsers() {
+  return GET("/users");
+}
 
 /**
  * postInfo
  * example of a POST request
  * @param {Object} data
  */
-export const postInfo = (data) => POST("/info", data);
+export function postInfo(data) {
+  return POST("/info", data);
+}

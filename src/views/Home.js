@@ -1,12 +1,30 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { getUsers } from "../services";
 
 import { Counter } from "./../features/counter/Counter";
 
 function Home() {
+  let [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    getUsers().then(({ data }) => {
+      setUsers(data.users);
+    });
+  }, []);
+
   return (
     <div className="Page">
       <div className="Wrapper">
         <Counter />
+
+        <ul data-testid="users">
+          {users.map((user) => (
+            <li key={user.id} data-testid={`user-${user.id}`}>
+              {user.name}
+            </li>
+          ))}
+        </ul>
+
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>

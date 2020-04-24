@@ -5,7 +5,7 @@
 $variable-one: 80px;
 $variable-two: #ffffff;
 
-.c-example-component {
+.Example {
   // Self definition
   $self: &;
 
@@ -69,14 +69,14 @@ $variable-two: #ffffff;
    * Children
    */
 
-  #{$self}__child-element {
+  #{$self}__Child {
     width: 160px;
     height: 160px;
 
     background: rebeccapurple;
   }
 
-  #{$self}__child-related-element {
+  #{$self}__AnotherChild {
     width: 160px;
     height: 160px;
   }

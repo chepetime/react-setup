@@ -1,6 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
+
 import "./scss/app.scss";
+
+// Version >= 2.4.0
+import 'swiper/css/swiper.css';
+
 import App from "./App";
 import store from "./app/store";
 import { Provider } from "react-redux";

@@ -20,3 +20,8 @@ $wrapper-reg: 1182px;
   margin: 0 auto;
   padding: 0 $wrapper-padding;
 }
+
+
+.Wrapper--hidden {
+  overflow: hidden;
+}

@@ -4,5 +4,11 @@
 
 // @import './example/_example';
 
-@import './../../components/Navigation/Navigation.scss';
-@import './../../components/Footer/Footer.scss';
+@import './../../components/Navigation/navigation.scss';
+
+@import './../../components/Footer/footer.scss';
+
+@import './../../components/DevicePreview/device-preview.scss';
+// @import './../../components/SwiperContainer/swiper-container.scss';
+
+@import './../../components/SwipperContainer/swiper-container.scss';

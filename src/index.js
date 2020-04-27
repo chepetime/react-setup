@@ -1,10 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+import "antd/dist/antd.css";
 import "./scss/app.scss";
 
 // Version >= 2.4.0
-import 'swiper/css/swiper.css';
+import "swiper/css/swiper.css";
 
 import App from "./App";
 import store from "./app/store";

@@ -1,0 +1,81 @@
+.DevicePreview {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+}
+
+.DevicePreview--big {
+}
+
+.DevicePreview--small {
+}
+
+.DevicePreview__Container {
+  display: flex;
+  overflow: visible;
+
+  justify-content: center;
+  align-items: center;
+
+  min-width: 270px;
+  height: 185px;
+  padding: 0 16px;
+
+  border-radius: 30px;
+  background: linear-gradient(148.77deg, #4e5a72 10.57%, #212e48 95.76%);
+  box-shadow: 5px 5px 10px rgba(79, 79, 79, 0.5);
+}
+
+.DevicePreview__Image {
+  position: relative;
+
+  min-width: 75px;
+  padding-right: 8px;
+
+  img {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+
+    width: 75px;
+    height: 188px;
+
+    @include transform(translate(-50%, -55%));
+  }
+}
+
+.DevicePreview__Content {
+  padding-right: 16px;
+  padding-left: 24px;
+}
+
+.DevicePreview__Name {
+  font-family: DIN Pro, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  font-style: normal;
+  line-height: 30px;
+
+  text-transform: uppercase;
+
+  color: #ffffff;
+}
+
+.DevicePreview__PromoType {
+  font-family: DIN Pro, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 17px;
+
+  color: #ffffff;
+}
+
+.DevicePreview__PromoQty {
+}
+
+.DevicePreview__Date {
+}

@@ -1,11 +1,15 @@
 import React, { useState, useEffect, Fragment } from "react";
-import Swiper from "react-id-swiper";
 
 import { getUsers } from "../services";
 
+import Page from "./../components/Page/index";
+
 import { Counter } from "./../features/counter/Counter";
-// import { FormLogin } from "./../components/FormLogin/index";
+
 import FormLogin from "./../components/FormLogin/index";
+
+import SwipperContainer from "./../components/SwipperContainer/index";
+import DevicePreview from "./../components/DevicePreview/index";
 
 import bankayaLogo from "./../assets/demo/bancaya_logo.svg";
 import deviceDemoPreview from "./../assets/demo/device_demo_1.png";
@@ -83,31 +87,19 @@ function Home() {
     },
   };
 
-  const [swiperOne, setSwiperOne] = useState(null);
-  const [swiperTwo, setSwiperTwo] = useState(null);
-
-  const params = {
-    pagination: {
-      el: ".swiper-pagination",
-      type: "bullets",
-      clickable: true,
-    },
-    spaceBetween: 30,
-  };
-
   return (
     <Fragment>
       {/* Page 1 */}
 
-      <div className="Page" data-page="step-1" data-page-name="home-welcome">
+      <Page>
         <div className="Page__Body">
           <div className="Wrapper">
             <FormLogin />
           </div>
         </div>
-      </div>
+      </Page>
 
-      <div className="Page" data-page="step-1" data-page-name="home-welcome">
+      <Page>
         <div className="Page__Header Page__Header--Logo">
           <img src={bankayaLogo} alt="Bankaya" />
         </div>
@@ -120,32 +112,15 @@ function Home() {
           </div>
 
           <div className="Wrapper Wrapper--slim Wrapper--hidden">
-            <Swiper {...params} getSwiper={setSwiperOne}>
+            <SwipperContainer>
               {devices.map((device) => (
-                <div
-                  className="DevicePreview DevicePreview--big"
+                <DevicePreview
+                  device={device}
+                  type="big"
                   key={`device-big-${device.id}`}
-                >
-                  <div className="DevicePreview__Container">
-                    <div className="DevicePreview__Image">
-                      <img src={device.thumbnail} alt={device.name} />
-                    </div>
-                    <div className="DevicePreview__Content">
-                      <p className="DevicePreview__Name">{device.name}</p>
-                      <p className="DevicePreview__PromoType">
-                        {device.promoType}
-                      </p>
-                      <p className="DevicePreview__PromoQty">
-                        {device.promoQty}
-                      </p>
-                      <p className="DevicePreview__Date">
-                        {device.availableDate}
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                />
               ))}
-            </Swiper>
+            </SwipperContainer>
           </div>
 
           <div className="Wrapper">
@@ -166,49 +141,17 @@ function Home() {
           {/* NavLinks */}
           {copy.ctaSimulator}
         </div>
-      </div>
+      </Page>
 
       {/* Page 2 */}
 
-      <div
-        className="Page"
-        data-page="step-2"
-        data-page-name="home-product-select"
-      >
+      <Page>
         <div className="Page__Header Page__Header Page__Header--arrow">
           {/* NavLinks */}
         </div>
 
         <div className="Page__Body">
-          <div className="Wrapper Wrapper--hidden">
-            <Swiper {...params} getSwiper={setSwiperTwo}>
-              {devices.map((device) => (
-                <div
-                  className="DevicePreview DevicePreview--small"
-                  key={`device-small-${device.id}`}
-                >
-                  <div className="DevicePreview__Container">
-                    <div className="DevicePreview__Image">
-                      <img src={device.thumbnail} alt={device.name} />
-                    </div>
-                    <div className="DevicePreview__Content">
-                      <p className="DevicePreview__Name">{device.name}</p>
-                      <p className="DevicePreview__PromoType">
-                        {device.promoType}
-                      </p>
-                      <p className="DevicePreview__PromoQty">
-                        {device.promoQty}
-                      </p>
-                      <p className="DevicePreview__Date">
-                        {device.availableDate}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </Swiper>
-            <div className="swiper-pagination" />
-          </div>
+          <div className="Wrapper Wrapper--hidden"></div>
 
           <div className="Wrapper">
             <div className="DataTable">
@@ -267,16 +210,11 @@ function Home() {
             </div>
           </div>
         </div>
-      </div>
+      </Page>
 
       {/* Page 3 */}
 
-      <div
-        className="Page"
-        data-page="step-1"
-        data-page-name="terms"
-        data-page-template="page-control"
-      >
+      <Page>
         <div className="Page__Header Page__Header--white">
           <div className="Page__Header__Controls"></div>
         </div>
@@ -290,11 +228,11 @@ function Home() {
 
           <div className="Wrapper"></div>
         </div>
-      </div>
+      </Page>
 
       {/* Mirage JS Demo */}
 
-      <div className="Page">
+      <Page>
         <div className="Page__Body">
           <div className="Wrapper">
             <p>Mirage JS Demo</p>
@@ -308,11 +246,11 @@ function Home() {
             </ul>
           </div>
         </div>
-      </div>
+      </Page>
 
       {/* Redux Demo */}
 
-      <div className="Page">
+      <Page>
         <div className="Page__Body">
           <div className="Wrapper">
             <p>Redux Demo</p>
@@ -362,7 +300,7 @@ function Home() {
             </span>
           </div>
         </div>
-      </div>
+      </Page>
     </Fragment>
   );
 }
